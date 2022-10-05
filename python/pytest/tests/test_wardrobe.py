@@ -1,4 +1,6 @@
 import pytest
+
+from app.size import Size
 from app.wardrobe import Wardrobe
 
 
@@ -12,3 +14,7 @@ class TestWardrobe:
                 valid = False
         if not valid:
             pytest.fail("Combinations are not valid", pytrace=True)
+
+    def test_combination_should_be_already_exist(self):
+        wardrobe = Wardrobe()
+        assert wardrobe.add_combination([Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY]) is False
