@@ -15,9 +15,11 @@ class TestWardrobe:
         if not valid:
             pytest.fail("Combinations are not valid", pytrace=True)
 
-    def test_combination_should_be_already_exist(self):
+    @pytest.mark.parametrize("combination, exist",
+                             [([Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY], True)])
+    def test_combination_should_be_already_exist(self, combination, exist):
         wardrobe = Wardrobe()
-        assert wardrobe.add_combination([Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY]) is False
+        assert wardrobe.check_is_exist(combination) is exist
 
     def test_can_add_number_to_combination(self):
         wardrobe = Wardrobe()

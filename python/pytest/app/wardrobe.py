@@ -16,8 +16,6 @@ class Wardrobe:
     def add_combination(self, combination: list[Size]):
         if not self.check_is_exist(combination):
             self.__combinations.append(combination)
-            return True
-        return False
 
     def configure_wardrobe(self):
         self.add_combination(self.create_combination())
