@@ -10,6 +10,7 @@ class Wardrobe:
         self.configure_wardrobe()
 
     def create_combination(self):
+        combination = []
         return [Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY]
 
     def add_combination(self, combination: list[Size]):
@@ -32,3 +33,11 @@ class Wardrobe:
                 return True
 
         return False
+
+    def can_add_number(self, combination: list[Size]):
+        available_numbers = []
+        for size in Size:
+            if sum(combination) + size < self.WALL_SIZE:
+                available_numbers.append(size)
+        available_numbers.sort()
+        return available_numbers
