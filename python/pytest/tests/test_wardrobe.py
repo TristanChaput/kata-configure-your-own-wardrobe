@@ -4,10 +4,6 @@ from app.wardrobe import Wardrobe
 
 class TestWardrobe:
 
-    def test_is_a_valid_combination(self):
-        wardrobe = Wardrobe()
-        assert sum(wardrobe.list_of_combinations()[0]) == Wardrobe.WALL_SIZE
-
     def test_all_valid_combination(self):
         wardrobe = Wardrobe()
         valid = True
