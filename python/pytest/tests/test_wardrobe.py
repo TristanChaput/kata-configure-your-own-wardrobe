@@ -21,4 +21,5 @@ class TestWardrobe:
 
     def test_can_add_number_to_combination(self):
         wardrobe = Wardrobe()
-        assert wardrobe.can_add_number() == True
+        expected_available_numbers = [Size.FIFTY, Size.SEVENTY_FIVE, Size.HUNDRED, Size.HUNDRED_TWENTY]
+        assert wardrobe.can_add_number([Size.FIFTY]) == expected_available_numbers
