@@ -6,5 +6,5 @@ class Wardrobe:
         self.__combinations = []
 
     def list_of_combinations(self):
-        self.__combinations.insert(0, [50, 50, 50, 50, 50])
+        self.__combinations.append([50, 50, 50, 50, 50])
         return self.__combinations
