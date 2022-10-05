@@ -18,3 +18,7 @@ class TestWardrobe:
     def test_combination_should_be_already_exist(self):
         wardrobe = Wardrobe()
         assert wardrobe.add_combination([Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY, Size.FIFTY]) is False
+
+    def test_can_add_number_to_combination(self):
+        wardrobe = Wardrobe()
+        assert wardrobe.can_add_number() == True
